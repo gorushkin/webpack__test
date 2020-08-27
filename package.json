@@ -53,12 +53,15 @@
     "@babel/polyfill": "^7.10.4",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
+    "faker": "^4.1.0",
     "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
+    "react-redux": "^7.2.1",
     "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
     "regenerator-runtime": "^0.13.7"
   }
 }

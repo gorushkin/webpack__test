@@ -1,12 +1,22 @@
+// @ts-check
+
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { hot } from 'react-hot-loader';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers/index.js';
+import App from './components/App.jsx';
 
-import Buttons from './Buttons.jsx';
+/* eslint-disable no-underscore-dangle */
+const store = createStore(
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+/* eslint-enable */
 
-ReactDOM.render(<Buttons count={5} />, document.getElementById('container'));
-
-const AppWithHot = hot(module)(Buttons);
-
-const mountNode = document.getElementById('app');
-ReactDOM.render(<AppWithHot name="Jane" />, mountNode);
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('container')
+);
